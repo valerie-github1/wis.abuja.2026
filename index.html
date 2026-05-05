@@ -540,15 +540,26 @@ nav {
   font-size: 9px; letter-spacing: 3px; color: var(--text3); margin-bottom: 12px;
 }
 .pkg-amenities-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 18px;
 }
 .pkg-amenity {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-  padding: 8px 4px; background: var(--bg2); border: 1px solid var(--border2);
-  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px 6px 8px; background: var(--bg2); border: 1px solid var(--border2);
+  text-align: center; transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
 }
-.pkg-amenity .a-icon { font-size: 18px; line-height: 1; }
-.pkg-amenity .a-label { font-size: 8.5px; color: var(--text3); line-height: 1.2; }
+.pkg-amenity:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.pkg-amenity .a-icon { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--text3); }
+.pkg-emerald  .pkg-amenity .a-icon { color: var(--emerald); }
+.pkg-sapphire .pkg-amenity .a-icon { color: var(--sapphire); }
+.pkg-ruby     .pkg-amenity .a-icon { color: var(--ruby); }
+.pkg-amber    .pkg-amenity .a-icon { color: var(--amber); }
+.pkg-opal     .pkg-amenity .a-icon { color: var(--opal); }
+.pkg-topaz    .pkg-amenity .a-icon { color: var(--topaz); }
+.pkg-amenity.no-meal .a-icon { color: #DC2626 !important; }
+.pkg-amenity .a-icon svg { width: 22px; height: 22px; }
+.pkg-amenity .a-label { font-size: 8px; color: var(--text3); line-height: 1.3; font-weight: 500; letter-spacing: 0.3px; }
+.pkg-amenity.no-meal { opacity: 0.45; }
 .pkg-checklist { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .pkg-checklist li {
   display: flex; align-items: flex-start; gap: 9px;
@@ -878,10 +889,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#10003;</span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0-2.2-1.8-4-4-4S10 5.8 10 8v4h8V8z"/><path d="M8 4v16M8 10H5a1 1 0 01-1-1V5a1 1 0 011-1h3"/><line x1="10" y1="19" x2="18" y2="19"/><line x1="14" y1="12" x2="14" y2="19"/></svg></span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
@@ -915,10 +926,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#10003;</span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0-2.2-1.8-4-4-4S10 5.8 10 8v4h8V8z"/><path d="M8 4v16M8 10H5a1 1 0 01-1-1V5a1 1 0 011-1h3"/><line x1="10" y1="19" x2="18" y2="19"/><line x1="14" y1="12" x2="14" y2="19"/></svg></span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
@@ -952,10 +963,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#10003;</span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0-2.2-1.8-4-4-4S10 5.8 10 8v4h8V8z"/><path d="M8 4v16M8 10H5a1 1 0 01-1-1V5a1 1 0 011-1h3"/><line x1="10" y1="19" x2="18" y2="19"/><line x1="14" y1="12" x2="14" y2="19"/></svg></span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
@@ -989,10 +1000,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#10003;</span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0-2.2-1.8-4-4-4S10 5.8 10 8v4h8V8z"/><path d="M8 4v16M8 10H5a1 1 0 01-1-1V5a1 1 0 011-1h3"/><line x1="10" y1="19" x2="18" y2="19"/><line x1="14" y1="12" x2="14" y2="19"/></svg></span><span class="a-label">Meals Incl.</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
@@ -1026,10 +1037,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity" style="opacity:0.4;"><span class="a-icon">&mdash;</span><span class="a-label">No Meals</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity no-meal"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span><span class="a-label">No Meals</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
@@ -1063,10 +1074,10 @@ footer a:hover { text-decoration: underline; }
           <div class="pkg-divider"></div>
           <p class="pkg-includes-label">What&rsquo;s Included</p>
           <div class="pkg-amenities-grid">
-            <div class="pkg-amenity"><span class="a-icon">&#9634;</span><span class="a-label">Branded Tent</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9723;</span><span class="a-label">Custom Space</span></div>
-            <div class="pkg-amenity"><span class="a-icon">&#9003;</span><span class="a-label">Table + 2 Chairs</span></div>
-            <div class="pkg-amenity" style="opacity:0.4;"><span class="a-icon">&mdash;</span><span class="a-label">No Meals</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 20h20L12 3z"/><path d="M12 3L7 20M12 3l5 17"/><path d="M5 13h14"/></svg></span><span class="a-label">Branded Tent</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="3" rx="1"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="16" y1="10" x2="16" y2="18"/><path d="M6 18h4M14 18h4"/></svg></span><span class="a-label">Table + 2 Chairs</span></div>
+            <div class="pkg-amenity no-meal"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span><span class="a-label">No Meals</span></div>
+            <div class="pkg-amenity"><span class="a-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="12"/><path d="M12 12L6 18M12 12l6 6"/></svg></span><span class="a-label">Networking</span></div>
           </div>
           <ul class="pkg-checklist">
             <li><span class="check-icon">&#10003;</span>Premium branded tent structure</li>
